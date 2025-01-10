@@ -157,11 +157,10 @@ public class Network {
     // follow.
     public String toString() {
         //// Replace the following statement with your code
-        String strUsers = "Network";
+        String strUsers = "Network:";
         System.out.println();
         for (int i = 0; i < userCount; i++) {
-            strUsers += users[i].toString();
-            System.out.println();
+            strUsers += users[i].toString() + "\n";
         }
         return strUsers;
     }
