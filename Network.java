@@ -89,7 +89,8 @@ public class Network {
         if (getUser(name1) == null || getUser(name2) == null || name1.equals(name2)) {
             return false;
         } else {
-            return getUser(name1).addFollowee(name2);
+            getUser(name1).addFollowee(name2);
+            return true;
         }
     }
 
@@ -121,7 +122,7 @@ public class Network {
     public String mostPopularUser() {
         //// Replace the following statement with your code
         int max = 0;
-        String mostPopular = "";
+        String mostPopular = "null";
         for (int i = 0; i < userCount; i++) {
             if (users[i] != null) {
                 if (max < followeeCount(users[i].getName())) {
