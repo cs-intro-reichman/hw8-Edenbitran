@@ -94,10 +94,10 @@ public class User {
                 for (int f = i; f < fCount - 1; f++) {
                     follows[f] = follows[f + 1];
                 }
-
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     /**
