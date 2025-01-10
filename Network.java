@@ -91,7 +91,7 @@ public class Network {
         if (user1 == null || user2 == null || user1.equals(user2)) {
             return false;
         }
-        return getUser(name1).addFollowee(name2);
+        return user1.addFollowee(user2.getName());
     }
 
     /**
