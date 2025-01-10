@@ -99,9 +99,9 @@ public class User {
                 for (int f = i; f < fCount; f++) {
                     follows[f] = follows[f + 1];
                 }
+                follows[--fCount] = null;
+                return true;
             }
-            follows[fCount - 1] = null;
-            return true;
         }
         return false;
 
