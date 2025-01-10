@@ -121,7 +121,7 @@ public class User {
      */
     public boolean isFriendOf(User other) {
         //// Replace the following statement with your code
-        return (follows(other.getName()) && other.follows(name));
+        return (follows(other.getName()) && other.follows(name) && addFollowee(name) == false);
     }
 
     /** Returns this user's name, and the names that s/he follows. */
