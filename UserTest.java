@@ -2,6 +2,9 @@
 public class UserTest {
     public static void main(String[] args) {
         System.out.println("...Testing the User class...\n");
+        User u = new User("eden", true);
+        System.out.println(u);
+        System.out.println(u.follows("foo"));
 
         // System.out
         // .println("...To get started, creating a dummy user for testing the toString
