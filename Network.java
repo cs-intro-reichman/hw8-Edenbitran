@@ -64,10 +64,12 @@ public class Network {
         if (userCount >= users.length) {
             return false;
         }
-        if (getUser(name) != null) {
-            return false;
+        for (int i = 0; i < userCount; i++) {
+            if (users[i].getName().equals(name)) {
+                return false;
+            }
         }
-        if (userCount + 1 <= users.length) {
+        if (userCount + 1 < users.length) {
             // users[userCount++] = new User(name);
             System.out.println(users[userCount] = new User(name));
             userCount++;
@@ -143,6 +145,7 @@ public class Network {
         int count = 0;
         for (int i = 0; i < userCount; i++) {
             for (int j = 0; j < users[i].getfCount(); j++) {
+
                 if (users[i].follows(name) == true) {
                     count++;
                 }
