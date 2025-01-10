@@ -40,7 +40,7 @@ public class Network {
         //// Replace the following statement with your code
         for (int i = 0; i < userCount; i++) {
             if (users[i] != null) {
-                if (users[i].getName().toLowerCase().equals(name.toLowerCase())) {
+                if (users[i].getName().equals(name)) {
                     return users[i];
                 }
             }
