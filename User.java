@@ -94,6 +94,9 @@ public class User {
             return false;
         }
         for (int i = 0; i < fCount; i++) {
+            if (!follows[i].toLowerCase().equals(capitalName) && i == fCount) {
+                return false;
+            }
             if (follows[i].toLowerCase().equals(capitalName) && follows[i] != null) {
                 for (int f = i; f < fCount; f++) {
                     follows[f] = follows[f + 1];
