@@ -51,8 +51,10 @@ public class User {
      */
     public boolean follows(String name) {
         //// Replace the following statement with your code
+        String capitalName = name.toLowerCase();
+
         for (int i = 0; i < fCount; i++) {
-            if (follows[i].toLowerCase().equals(name.toLowerCase())) {
+            if (follows[i].toLowerCase().equals(capitalName)) {
                 return true;
             }
         }
