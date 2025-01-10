@@ -91,15 +91,18 @@ public class User {
         //// Replace the following statement with your code
         String capitalName = name.toLowerCase();
         for (int i = 0; i < fCount; i++) {
+            if (follows[i] == null) {
+                return false;
+            }
             if (follows[i].toLowerCase().equals(capitalName) && follows[i] != null) {
                 fCount--;
                 for (int f = i; f < fCount; f++) {
                     follows[f] = follows[f + 1];
                 }
-                return true;
             }
         }
-        return false;
+        return true;
+
     }
 
     /**
