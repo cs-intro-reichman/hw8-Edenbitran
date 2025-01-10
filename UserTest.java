@@ -23,6 +23,7 @@ public class UserTest {
         alex.addFollowee("Ben");
         alex.addFollowee("Neta");
         alex.addFollowee("Dana");
+        System.out.println(alex.follows("dana"));
 
         System.out.println(alex);
 

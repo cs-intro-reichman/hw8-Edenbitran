@@ -52,7 +52,7 @@ public class User {
     public boolean follows(String name) {
         //// Replace the following statement with your code
         for (int i = 0; i < fCount; i++) {
-            if (follows[i] == name) {
+            if (follows[i].toLowerCase().equals(name.toLowerCase())) {
                 return true;
             }
         }
@@ -66,12 +66,13 @@ public class User {
      */
     public boolean addFollowee(String name) {
         //// Replace the following statement with your code
-        if (fCount == 10 || follows(name) == true) {
+        if (fCount == 10 || follows(name.toLowerCase()) == true) {
             return false;
         } else {
             for (int i = 0; i <= fCount; i++) {
-                if (follows(name) == false && fCount <= maxfCount) {
-                    follows[fCount++] = name;
+                if (follows(name) == false && fCount < maxfCount) {
+                    follows[fCount] = name.toLowerCase();
+                    fCount++;
                 }
             }
             return true;
@@ -106,7 +107,7 @@ public class User {
     public int countMutual(User other) {
         //// Replace the following statement with your code
         int countCommon = 0;
-        for (int i = 0; i < this.fCount; i++) {
+        for (int i = 0; i < fCount; i++) {
             if (other.follows(follows[i])) {
                 countCommon++;
             }
@@ -120,10 +121,7 @@ public class User {
      */
     public boolean isFriendOf(User other) {
         //// Replace the following statement with your code
-        if (!follows(other.getName()) && (!other.follows(name))) {
-            return false;
-        }
-        return true;
+        return (follows(other.getName()) && other.follows(name));
     }
 
     /** Returns this user's name, and the names that s/he follows. */
