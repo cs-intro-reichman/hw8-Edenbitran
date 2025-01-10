@@ -120,7 +120,7 @@ public class User {
      */
     public boolean isFriendOf(User other) {
         //// Replace the following statement with your code
-        if (!follows(other.getName())) {
+        if (!follows(other.getName()) && (!other.follows(name))) {
             return false;
         }
         return true;
