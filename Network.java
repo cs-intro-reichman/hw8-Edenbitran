@@ -88,12 +88,10 @@ public class Network {
         //// Replace the following statement with your code
         User user1 = getUser(name1);
         User user2 = getUser(name2);
-        if (user1 == null || user2 == null) {
+        if (user1 == null || user2 == null || user1.equals(user2)) {
             return false;
-        } else {
-            getUser(name1).addFollowee(name2);
-            return true;
         }
+        return getUser(name1).addFollowee(name2);
     }
 
     /**
