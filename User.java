@@ -90,16 +90,17 @@ public class User {
     public boolean removeFollowee(String name) {
         //// Replace the following statement with your code
         String capitalName = name.toLowerCase();
+        if (fCount == 0) {
+            return false;
+        }
         for (int i = 0; i < fCount; i++) {
-            if (follows[i] == null) {
-                return false;
-            }
             if (follows[i].toLowerCase().equals(capitalName) && follows[i] != null) {
                 fCount--;
                 for (int f = i; f < fCount; f++) {
                     follows[f] = follows[f + 1];
                 }
             }
+            follows[fCount - 1] = null;
         }
         return true;
 
