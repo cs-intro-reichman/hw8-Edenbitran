@@ -66,12 +66,12 @@ public class User {
      */
     public boolean addFollowee(String name) {
         //// Replace the following statement with your code
-        if (fCount == 10 || follows(name.toLowerCase()) == true) {
+        if (fCount == 10 || follows(name) == true) {
             return false;
         } else {
             for (int i = 0; i <= fCount; i++) {
                 if (follows(name) == false && fCount < maxfCount) {
-                    follows[fCount] = name.toLowerCase();
+                    follows[fCount] = name;
                     fCount++;
                 }
             }
@@ -90,7 +90,7 @@ public class User {
             return false;
         }
         for (int i = 0; i < fCount; i++) {
-            if (follows[i].equals(name) && follows[i] != null) {
+            if (follows[i].toLowerCase().equals(name.toLowerCase()) && follows[i] != null) {
                 for (int f = i; f < fCount - 1; f++) {
                     follows[f] = follows[f + 1];
                 }
