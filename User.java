@@ -101,8 +101,9 @@ public class User {
                 }
             }
             follows[fCount - 1] = null;
+            return true;
         }
-        return true;
+        return false;
 
     }
 
