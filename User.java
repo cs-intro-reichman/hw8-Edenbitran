@@ -33,7 +33,7 @@ public class User {
 
     /** Returns the name of this user. */
     public String getName() {
-        return name;
+        return name.toLowerCase();
     }
 
     /** Returns the follows array. */
