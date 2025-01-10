@@ -105,8 +105,8 @@ public class Network {
         String userWithMaxFollows = "";
         for (int i = 0; i < userCount; i++) {
             if (users[i].getName() != name) {
-                if (max < users[i].getfCount()) {
-                    max = users[i].getfCount();
+                if (max < users[i].getfCount() && getUser(name).countMutual(users[i]) > max) {
+                    max = getUser(name).countMutual(users[i]);
                     userWithMaxFollows = users[i].getName();
                 }
             }
