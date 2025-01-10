@@ -158,9 +158,10 @@ public class Network {
     public String toString() {
         //// Replace the following statement with your code
         String strUsers = "Network";
+        System.out.println();
         for (int i = 0; i < userCount; i++) {
-            // System.out.println(users[i].toString());
-            strUsers += users[i].toString() + "\n";
+            strUsers += users[i].toString();
+
         }
         return strUsers;
     }
