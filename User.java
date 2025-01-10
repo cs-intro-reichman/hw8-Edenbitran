@@ -91,10 +91,11 @@ public class User {
         }
         for (int i = 0; i < fCount; i++) {
             if (follows[i].equals(name)) {
+                fCount--;
                 for (int f = i + 1; f < fCount; f++) {
                     follows[f] = follows[f + 1];
                 }
-                fCount--;
+
             }
         }
         return true;
