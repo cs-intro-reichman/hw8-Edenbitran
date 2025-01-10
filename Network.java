@@ -161,7 +161,7 @@ public class Network {
         System.out.println();
         for (int i = 0; i < userCount; i++) {
             strUsers += users[i].toString();
-
+            System.out.println();
         }
         return strUsers;
     }
