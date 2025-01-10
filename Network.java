@@ -160,7 +160,7 @@ public class Network {
         String strUsers = "Network:";
         System.out.println(strUsers);
         for (int i = 0; i < userCount; i++) {
-            strUsers += "\n" + users[i].toString() + "\n";
+            strUsers += "\n" + users[i].toString();
         }
         return strUsers;
     }
