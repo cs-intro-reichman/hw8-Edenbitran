@@ -73,6 +73,7 @@ public class User {
                 if (follows(name) == false && fCount < maxfCount) {
                     follows[fCount] = name;
                     fCount++;
+                    break;
                 }
             }
             return true;
@@ -86,11 +87,9 @@ public class User {
      */
     public boolean removeFollowee(String name) {
         //// Replace the following statement with your code
-        if (follows(name) == false) {
-            return false;
-        }
+        String capitalName = name.toLowerCase();
         for (int i = 0; i < fCount; i++) {
-            if (follows[i].toLowerCase().equals(name.toLowerCase()) && follows[i] != null) {
+            if (follows[i].toLowerCase().equals(capitalName) && follows[i] != null) {
                 for (int f = i; f <= fCount - 1; f++) {
                     follows[f] = follows[f + 1];
                 }
@@ -121,7 +120,10 @@ public class User {
      */
     public boolean isFriendOf(User other) {
         //// Replace the following statement with your code
-        return (follows(other.getName()) && other.follows(name) && addFollowee(other.getName()) == false);
+        if (follows(other.getName()) && other.follows(this.getName())) {
+            return true;
+        }
+        return false;
     }
 
     /** Returns this user's name, and the names that s/he follows. */
