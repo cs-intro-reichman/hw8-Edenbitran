@@ -54,7 +54,7 @@ public class User {
         String capitalName = name.toLowerCase();
 
         for (int i = 0; i < fCount; i++) {
-            if (follows[i].equals(capitalName)) {
+            if (follows[i] != null && follows[i].equals(capitalName)) {
                 return true;
             }
         }
