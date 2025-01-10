@@ -42,8 +42,10 @@ public class Network {
             return null;
         }
         for (int i = 0; i < userCount; i++) {
-            if (users[i].getName().toLowerCase().equals(name.toLowerCase())) {
-                return users[i];
+            if (users[i] != null) {
+                if (users[i].getName().toLowerCase().equals(name.toLowerCase())) {
+                    return users[i];
+                }
             }
         }
         return null;
@@ -82,7 +84,7 @@ public class Network {
      */
     public boolean addFollowee(String name1, String name2) {
         //// Replace the following statement with your code
-        if (getUser(name1) == null || getUser(name2) == null || getUser(name1).follows(name2) == true
+        if (getUser(name1).equals(null) || getUser(name2).equals(null) || getUser(name1).follows(name2) == true
                 || name1.equals(name2)) {
             return false;
         } else {
