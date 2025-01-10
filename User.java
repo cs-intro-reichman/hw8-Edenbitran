@@ -90,8 +90,8 @@ public class User {
             return false;
         }
         for (int i = 0; i < fCount; i++) {
-            if (follows[i].toLowerCase().equals(name.toLowerCase()) && follows[i] != null) {
-                for (int f = i; f < fCount - 1; f++) {
+            if (follows[i].equals(name) && follows[i] != null) {
+                for (int f = i; f <= fCount - 1; f++) {
                     follows[f] = follows[f + 1];
                 }
                 return true;
