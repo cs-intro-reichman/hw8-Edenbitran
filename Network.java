@@ -159,9 +159,8 @@ public class Network {
         //// Replace the following statement with your code
         String strUsers = "Network:";
         System.out.println(strUsers);
-        System.out.println();
         for (int i = 0; i < userCount; i++) {
-            strUsers += users[i].toString() + "\n";
+            strUsers += "\n" + users[i].toString() + "\n";
         }
         return strUsers;
     }
